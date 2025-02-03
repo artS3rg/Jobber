@@ -1,9 +1,9 @@
 package com.artinc.jobber
 
 import android.app.Application
-import com.artinc.jobber.di.dataModule
-import com.artinc.jobber.di.domainModule
-import com.artinc.jobber.di.presentationModule
+import com.artinc.data.dataModule
+import com.artinc.domain.domainModule
+import com.artinc.presentation.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 

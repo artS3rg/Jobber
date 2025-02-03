@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    id("com.android.library")
     alias(libs.plugins.kotlin.android)
 }
 
@@ -8,11 +8,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.artinc.presentation"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +33,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+    implementation(project(":data"))
+
+    // Основной Koin для Android
+    implementation("io.insert-koin:koin-android:3.5.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

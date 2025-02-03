@@ -1,6 +1,6 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -8,11 +8,8 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.artinc.data"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +33,19 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+
+    // Retrofit для сетевых запросов
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // Converter для Gson
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Gson для работы с JSON
+    implementation("com.google.code.gson:gson:2.10.1")
+
+    // Основной Koin для Android
+    implementation("io.insert-koin:koin-android:3.5.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -36,6 +36,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
+    implementation(project(":presentation"))
+    implementation(project(":domain"))
     // Основной Koin для Android
     implementation("io.insert-koin:koin-android:3.5.3")
 
@@ -45,15 +48,6 @@ dependencies {
     // Kotlin Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
-
-    // Retrofit для сетевых запросов
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
-    // Converter для Gson
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-
-    // Gson для работы с JSON
-    implementation("com.google.code.gson:gson:2.10.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
